@@ -3,6 +3,8 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import mapboxgl from 'mapbox-gl';
 import MapboxDraw from '@mapbox/mapbox-gl-draw';
+import ZoomControl from '@mapbox-controls/zoom';
+import '@mapbox-controls/zoom/src/index.css';
 
 @Component({
   selector: 'app-mapbox',
@@ -53,7 +55,7 @@ export class MapboxComponent implements OnInit {
 
       // Add draw control to map
       this.map.addControl(this.draw);
-
+      this.map.addControl(new ZoomControl(), 'bottom-right');
       // Add event listeners
       this.map.on('draw.create', this.updatePolygonCoordinates.bind(this));
       this.map.on('draw.update', this.updatePolygonCoordinates.bind(this));
