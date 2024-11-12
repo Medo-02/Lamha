@@ -3,7 +3,11 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import mapboxgl from 'mapbox-gl';
 import MapboxDraw from '@mapbox/mapbox-gl-draw';
+import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import ZoomControl from '@mapbox-controls/zoom';
+
+// Import required CSS
+import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import '@mapbox-controls/zoom/src/index.css';
 
 @Component({
@@ -17,9 +21,7 @@ export class MapboxComponent implements OnInit {
   map!: mapboxgl.Map;
   draw!: MapboxDraw;
 
-  constructor() {
-    // Move MapboxDraw initialization to ngOnInit
-  }
+  constructor() {}
 
   ngOnInit() {
     // Set access token
@@ -55,8 +57,31 @@ export class MapboxComponent implements OnInit {
 
       // Add draw control to map
       this.map.addControl(this.draw);
+
+      // Add zoom control
       this.map.addControl(new ZoomControl(), 'bottom-right');
-      // Add event listeners
+
+      // Add geocoder control
+      const geocoder = new MapboxGeocoder({
+        accessToken: mapboxgl.accessToken,
+        mapboxgl: mapboxgl as any, // Type assertion needed for TypeScript
+        placeholder: 'Search for a location...',
+        proximity: {
+          longitude: 46.7219,
+          latitude: 24.6877,
+        }, // Bias results toward Riyadh
+        language: 'ar', // Set to Arabic
+        countries: 'sa', // Limit to Saudi Arabia
+      });
+
+      this.map.addControl(geocoder, 'top-left');
+
+      // Optional: Handle geocoder result
+      geocoder.on('result', (event) => {
+        console.log('Selected location:', event.result);
+      });
+
+      // Add event listeners for draw
       this.map.on('draw.create', this.updatePolygonCoordinates.bind(this));
       this.map.on('draw.update', this.updatePolygonCoordinates.bind(this));
     });

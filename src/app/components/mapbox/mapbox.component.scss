@@ -1,4 +1,5 @@
 /* map.component.css */
+@import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 #map {
   width: 100%;
   height: 400px;
