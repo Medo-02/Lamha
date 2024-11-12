@@ -1,0 +1,12 @@
+<div
+  [dir]="'settings.dir' | translate"
+  [class]="'settings.titlesFont' | translate"
+>
+  <app-navbar></app-navbar>
+  <main class="flex flex-col gap-20">
+    <app-intro></app-intro>
+    <app-mapbox></app-mapbox>
+    <app-footer></app-footer>
+    <router-outlet></router-outlet>
+  </main>
+</div>

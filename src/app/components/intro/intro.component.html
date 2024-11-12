@@ -1,0 +1,24 @@
+<div
+  class="welcome-section-container flex flex-col justify-center items-center"
+>
+  <div
+    class="flex flex-col-reverse h-full w-5/6 xl:w-7/12 items-center justify-center gap-4 pt-20 md:pt-10"
+  >
+    <div class="flex flex-col items-center justify-center gap-4 text-center" #introContainer id="introContainer">
+      <h1 class="font-bold text-8xl font-rakkas font-title">{{ "intro.title" | translate }}</h1>
+      <p class="text-l">
+        {{ "intro.description" | translate }}
+      </p>
+      <h2 class="font-semibold">{{ "intro.contactInfo" | translate }}</h2>
+      <div class="flex flex-row gap-3 items-center">
+        <button class="glow-on-hover" type="button">{{ "intro.joinBtn" | translate }}</button>
+        <button class="glow-on-hover-outlined" type="button">{{ "intro.moreBtn" | translate }}</button>
+      </div>
+    </div>
+  </div>
+  <i
+    class="fi fi-rr-angle-small-down animate-flicker"
+    style="font-size: 2rem"
+  ></i>
+</div>
+

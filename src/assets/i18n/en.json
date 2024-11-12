@@ -1,0 +1,81 @@
+{
+  "settings": {
+    "dir": "ltr",
+    "titlesFont": "en-fonts",
+    "title": "Lamha",
+    "underConstruction": "Under Construction"
+  },
+  "navbar": {
+    "name": "Lamha"
+  },
+  "intro": {
+    "title": "Lamha",
+    "description": "Platform that help in in choosing the ideal real estate in your neiberhood",
+    "contactInfo": "Contact Us",
+    "moreBtn": "Learn More",
+    "joinBtn": "Join Now"
+  },
+  "skills": {
+    "title": "Skills",
+    "frontendSubtitle": "Frontend Development Skills",
+    "backendSubtitle": "Backend Development Skills"
+  },
+  "experience": {
+    "title": "Experience",
+    "learnedTechSubtitle": "Learned Technologies",
+    "job1": {
+      "title": "Software Engineering Intern",
+      "loaction": "Houston, TX, USA",
+      "date": "06/2023 - 08/2023",
+      "tasks": [
+        "Creating and working with Front-end project using Angular",
+        "Dealing with high stream rate data using RxJS and SignalR",
+        "Using Angular Material and AG Grid to create interactive UIs"
+      ]
+    }
+  },
+  "education": {
+    "title": "Education",
+    "cardTitle": "Fresh Graduate from #1 Arab University",
+    "degree": "Bachelor of Science in Software Engineering",
+    "university": "King Fahd University of Petroleum & Minerals",
+    "graduationDate": "June 2024",
+    "graduationHonors": "Second Honors Graduate",
+    "CXProgram": [
+      "Completed the ",
+      "CX Program",
+      " in Artificial Intelligence & Machine Learning"
+    ],
+    "date": "01/2020 - 06/2024",
+    "image": "KFUPM_LOGO_en.png"
+  },
+  "projects": {
+    "title": "Projects",
+    "forMore": "For more projects, visit my GitHub profile",
+    "visit": "Visit",
+    "coomingSoon": "Coming Soon",
+    "projectsList": [
+      {
+        "title": "WikiProduct",
+        "description": "An AI-powered digital warehouse system and web archive showcasing diverse internet products with personalized shopping recommendations.",
+        "image": "WikiProduct.png",
+        "link": "https://wikiproduct.up.railway.app/"
+      },
+      {
+        "title": "Baleegh",
+        "description": "Baleegh is a platform that offers translation into eloquent Arabic, focusing on brevity and clarity, unlike other platforms that rely on lengthy and awkward translations.",
+        "image": "Baleegh.png",
+        "link": "https://baleegh-production.up.railway.app/"
+      },
+      {
+        "title": "Scheduleit",
+        "description": "A tool to help people to schedule a suitable date. by seeing the dates that guests are busy in or the dates they are free in.",
+        "image": "Scheduleit.png",
+        "link": "https://scheduleit.up.railway.app/en"
+      }
+    ]
+  },
+  "footer": {
+    "title": "Created By Elyas Almubarak @2024"
+  }
+}

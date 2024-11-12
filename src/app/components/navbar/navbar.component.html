@@ -1,0 +1,39 @@
+<nav
+  [ngClass]="{
+    'navbar-blur': navbarScrolled,
+  }"
+  class="navbar flex justify-between py-3 px-6 items-center"
+>
+  <div class="cursor-pointer flex flex-row">
+    <div
+      class="flex mt-1 items-center align-content-center gap-1"
+      [routerLink]="['/']"
+    >
+      <!-- <img src="../../../assets/images/Navbar_logo.png" class="logo" alt="" /> -->
+      <div class="flex-row text-2xl lg:text-3xl">
+        <div class="navbar-name font-rakkas">
+          {{ "navbar.name" | translate }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="flex flex-row items-center mt-1 gap-4 text-xl lg:text-2xl">
+  <div class="cursor-pointer" (click)="toggleTheme()">
+    @if (!isDarkTheme) {
+      <i class="fi fi-rc-moon"></i>
+    }
+    @else {
+      <i class="fi fi-rs-brightness"></i>
+    }
+  </div>
+  <div class="cursor-pointer" (click)="toggleLang()">
+    <!-- <img
+      src="../../../assets/icons/arabic.png"
+      class="icon p-1 rounded-lg"
+      alt="change language"
+    /> -->
+    <i class="fi fi-rc-globe"></i>
+  </div>
+  </div>
+
+</nav>
