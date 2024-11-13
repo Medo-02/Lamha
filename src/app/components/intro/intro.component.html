@@ -10,20 +10,28 @@
       id="introContainer"
     >
       <h1
-        class="font-bold text-8xl font-title"
-        [class]="'settings.logoFont' | translate"
+        class="font-bold text-8xl font-title ar-logo-font"
+
       >
-        {{ "intro.title" | translate }}
+        لمحة
       </h1>
       <p class="text-l">
         {{ "intro.description" | translate }}
       </p>
       <h2 class="font-semibold">{{ "intro.contactInfo" | translate }}</h2>
       <div class="flex flex-row gap-3 items-center">
-        <button routerLink="/map" class="glow-on-hover" type="button">
+        <button
+          class="glow-on-hover"
+          type="button"
+          (click)="scrollToProjects()"
+        >
           {{ "intro.joinBtn" | translate }}
         </button>
-        <button class="glow-on-hover-outlined" type="button">
+        <button
+          class="glow-on-hover-outlined"
+          type="button"
+          (click)="scrollToSteps()"
+        >
           {{ "intro.moreBtn" | translate }}
         </button>
       </div>
@@ -35,3 +43,4 @@
   ></i> -->
 </div>
 <app-steps></app-steps>
+<app-projects></app-projects>

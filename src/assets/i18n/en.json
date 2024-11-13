@@ -57,26 +57,73 @@
   "steps": {
     "step_1": {
       "title": "Search",
-      "description": "Search for properties in your desired neighborhood",
+      "description": "Search for properties using an advanced interactive map. Set your search radius and filter results by price, area, and rooms. View photos and details directly from the map interface",
       "alt": "Search step image"
     },
     "step_2": {
       "title": "Compare",
-      "description": "Compare different properties and their surroundings",
+      "description": "Compare properties by prices, areas, finishes, and available services. Learn about each property's design, view, and location, with accurate assessment of its surroundings",
       "alt": "Compare step image"
     },
     "step_3": {
       "title": "Analyze",
-      "description": "Analyze neighborhood data and statistics",
-      "alt": "Analyze step image"
+      "description": "Review neighborhood safety, schools, hospitals, noise levels, and traffic flow. Explore public facilities, parks, mosques, and shopping centers, with area development analysis",
+      "alt": "Analysis step image"
     },
     "step_4": {
       "title": "Choose",
-      "description": "Make an informed decision about your ideal property",
+      "description": "Make informed decisions based on data analysis and comparisons. Get evaluation reports, future projections, and smart recommendations that match your needs and budget",
       "alt": "Choose step image"
     }
   },
   "footer": {
     "title": "Lamha @2024"
+  },
+  "projects": {
+    "title": "Subscription Plans",
+    "description": "Choose the plan that best fits your needs",
+    "recommended": "Recommended",
+    "plans": [
+      {
+        "title": "Basic",
+        "price": "Free",
+        "features": [
+          "Basic neighborhood statistics",
+          "Limited property searches",
+          "Standard map view",
+          "Basic traffic data"
+        ],
+        "buttonText": "Start Free",
+        "recommended": false
+      },
+      {
+        "title": "Professional",
+        "price": "150 SAR/month",
+        "features": [
+          "Advanced neighborhood analytics",
+          "Unlimited property searches",
+          "Detailed traffic patterns",
+          "Historical incident data",
+          "Property comparison tools",
+          "Export reports"
+        ],
+        "buttonText": "Subscribe Now",
+        "recommended": true
+      },
+      {
+        "title": "Enterprise",
+        "price": "Custom",
+        "features": [
+          "All Professional features",
+          "API access",
+          "Custom analytics",
+          "Dedicated support",
+          "Team management",
+          "White-label options"
+        ],
+        "buttonText": "Contact Sales",
+        "recommended": false
+      }
+    ]
   }
 }

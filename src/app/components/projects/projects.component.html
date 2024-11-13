@@ -1,0 +1,76 @@
+<div
+  #projectsContainer
+  id="projectsContainer"
+  class="flex flex-col items-center justify-center align-content-center gap-8 py-12"
+>
+  <div class="text-center mb-8">
+    <h1 class="font-bold text-3xl lg:text-4xl mb-4 text-primary">
+      {{ "projects.title" | translate }}
+    </h1>
+    <p class="text-lg text-primary">
+      {{ "projects.description" | translate }}
+    </p>
+  </div>
+
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-5/6 lg:w-4/5"
+  >
+    @for (plan of 'projects.plans' | translate; track plan.title){
+    <div
+      class="subscription-card rounded-xl p-8 flex flex-col justify-between border transition-all duration-300 hover:shadow-lg"
+      [class.border-primary]="plan.recommended"
+      [class.shadow-xl]="plan.recommended"
+      [class.transform]="plan.recommended"
+      [class.scale-105]="plan.recommended"
+    >
+      <!-- Plan Header -->
+      <div class="text-center mb-8">
+        @if(plan.recommended){
+        <span
+          class="bg-primary text-primary px-8 py-2 rounded-full text-base font-bold mb-8 inline-block"
+          style="background-color: var(--surface-300)"
+          >{{ "projects.recommended" | translate }}</span
+        >
+        }
+        <h2 class="text-2xl font-bold mb-3">{{ plan.title }}</h2>
+        <div class="text-4xl font-bold text-primary mb-2">{{ plan.price }}</div>
+      </div>
+
+      <!-- Features List -->
+      <div class="flex-grow">
+        <ul class="space-y-4">
+          @for(feature of plan.features; track feature){
+          <li class="flex items-start">
+            <svg
+              class="w-5 h-5 text-primary mt-0.5 mr-3 flex-shrink-0"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+            <span class="text-primary">{{ feature }}</span>
+          </li>
+          }
+        </ul>
+      </div>
+
+      <!-- Action Button -->
+      <div class="mt-8 flex justify-center">
+        <button
+          [class]="
+            plan.recommended ? 'glow-on-hover' : 'glow-on-hover-outlined'
+          "
+          type="button"
+          (click)="navigateToMap()"
+        >
+          {{ plan.buttonText }}
+        </button>
+      </div>
+    </div>
+    }
+  </div>
+</div>
