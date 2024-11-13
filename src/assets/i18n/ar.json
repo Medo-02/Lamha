@@ -17,7 +17,14 @@
     "joinBtn": "انضم الان"
   },
   "mapbox":{
-    "traffic": "حركة المرور",
+    "genral": "عام",
+    "area": "المساحة المحددة",
+    "demographics": "التعداد السكاني",
+    "female_population": "الإناث",
+    "male_population": "الذكور",
+    "total_population": "إجمالي التعداد",
+
+    "traffic": "حركة المرور الحالية",
     "frequencyOfIncidences": "عدد الحوادث",
     "typesOfIncidences":"أنواع الحوادث",
     "magnitudeOfTraffic":"حجم الحركة",

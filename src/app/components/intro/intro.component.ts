@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Blob } from '../../models/blob.model';
 import { TranslateModule } from '@ngx-translate/core';
 import { gsap } from 'gsap';
-import { StepsComponent } from "../steps/steps.component";
+import { RouterModule } from '@angular/router';
+import { StepsComponent } from '../steps/steps.component';
 @Component({
   selector: 'app-intro',
   standalone: true,
-  imports: [TranslateModule, StepsComponent],
+  imports: [TranslateModule, RouterModule, StepsComponent],
   templateUrl: './intro.component.html',
   styleUrl: './intro.component.scss',
 })
