@@ -61,6 +61,23 @@
             <p>{{ "mapbox.frequencyOfIncidences" | translate }}:</p>
             <p>{{ data.incident_data.frequency_of_incidences }}</p>
           </div>
+          @if (data.incident_data.types_of_incidences) {
+          <div class="w-full">
+            <p class="mb-2">{{ "mapbox.typesOfIncidences" | translate }}:</p>
+            <div class="grid grid-cols-1 gap-2">
+              @for (item of
+              gettypesOfIncidencesEntries(data.incident_data.types_of_incidences);
+              track item[0]) {
+              <div
+                class="flex justify-between items-center p-2 bg-surface-200 rounded"
+              >
+                <span>{{ item[0] }}</span>
+                <span class="font-bold">{{ item[1] }}</span>
+              </div>
+              }
+            </div>
+          </div>
+          }
 
           <!-- Traffic Magnitude -->
           @if (data.incident_data.magnitude_of_traffic) {

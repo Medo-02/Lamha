@@ -44,6 +44,13 @@
       { "id": 11, "description": "فيضانات" },
       { "id": 14, "description": "مركبة معطلة" }
   ],
+"magnitude_types": [
+  { "id": 0, "description": "غير معروف" },
+  { "id": 1, "description": "منخفض" },
+  { "id": 2, "description": "متوسط" },
+  { "id": 3, "description": "عالي" },
+  { "id": 4, "description": "عالي جدًا" }
+],
   "district": "معلومات الحي",
   "district_name": "اسم الحي",
   "price_per_m2": "السعر لكل متر مربع"

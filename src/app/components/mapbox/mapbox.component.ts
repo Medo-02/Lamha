@@ -136,6 +136,19 @@ export class MapboxComponent implements OnInit {
     }
     return Object.entries(magnitude).map(([key, value]) => {
       return [
+        this.translateService.instant(
+          `mapbox.magnitude_types.${key}.description`
+        ),
+        value as number,
+      ];
+    });
+  }
+  gettypesOfIncidencesEntries(magnitude: any): [string, number][] {
+    if (!magnitude || typeof magnitude !== 'object') {
+      return [];
+    }
+    return Object.entries(magnitude).map(([key, value]) => {
+      return [
         this.translateService.instant(`mapbox.types.${key}.description`),
         value as number,
       ];
