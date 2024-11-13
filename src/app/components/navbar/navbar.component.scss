@@ -5,22 +5,9 @@
 
 .navbar-name {
   color: var(--primary-color);
-  font-weight: bolder;
 }
 .logo {
   width: 2.5rem;
   height: 2.5rem;
   object-fit: contain;
-}
-.icon {
-  width: 2rem;
-  height: 2rem;
-  object-fit: contain;
-  background: var(--secondary-color);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border: 1px solid var(--surface-border);
-}
-.icon:hover {
-  background: var(--surface-400);
 }

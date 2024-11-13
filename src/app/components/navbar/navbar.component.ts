@@ -3,6 +3,7 @@ import { Component, HostListener } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { CookieService } from 'ngx-cookie-service';
+import { ThemeControlService } from '../../services/theme-control.service';
 
 @Component({
   selector: 'app-navbar',
@@ -12,11 +13,13 @@ import { CookieService } from 'ngx-cookie-service';
   styleUrl: './navbar.component.scss',
 })
 export class NavbarComponent {
-
   navbarScrolled: boolean = false;
-  isDarkTheme = false; // Default is light theme
 
-  constructor(private translateService: TranslateService, private cookieService: CookieService) {}
+  constructor(
+    private translateService: TranslateService,
+    private cookieService: CookieService,
+    protected themeControl: ThemeControlService
+  ) {}
   toggleLang() {
     const currentLang = this.translateService.currentLang;
     const newLang = currentLang === 'ar' ? 'en' : 'ar';
@@ -35,18 +38,20 @@ export class NavbarComponent {
 
   ngOnInit() {
     const darkThemeCookie = this.cookieService.get('darkTheme');
-    this.isDarkTheme = darkThemeCookie === 'true';
+    this.themeControl.isDarkTheme = darkThemeCookie === 'true';
     this.applyTheme();
   }
 
   toggleTheme() {
-    this.isDarkTheme = !this.isDarkTheme;
+    this.themeControl.isDarkTheme = !this.themeControl.isDarkTheme;
     this.applyTheme();
-    this.cookieService.set('darkTheme', String(this.isDarkTheme), { expires: 9999 });
+    this.cookieService.set('darkTheme', String(this.themeControl.isDarkTheme), {
+      expires: 9999,
+    });
   }
 
   applyTheme() {
-    if (this.isDarkTheme) {
+    if (this.themeControl.isDarkTheme) {
       document.body.classList.add('dark-theme');
     } else {
       document.body.classList.remove('dark-theme');

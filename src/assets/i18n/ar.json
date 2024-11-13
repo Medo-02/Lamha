@@ -2,6 +2,7 @@
   "settings": {
     "dir": "rtl",
     "titlesFont": "ar-fonts",
+    "logoFont": "ar-logo-font",
     "title": "لمحة",
     "underConstruction": "أقسام قيد الإنشاء"
   },
@@ -15,67 +16,29 @@
     "moreBtn": "للمزيد من المعلومات",
     "joinBtn": "انضم الان"
   },
-  "skills": {
-    "title": "المهارات",
-    "frontendSubtitle": "مهارت تطوير الواجهة الأمامية",
-    "backendSubtitle": "مهارت تطوير الواجهة الخلفية"
-  },
-  "experience": {
-    "title": "الخبرة المهنية",
-    "learnedTechSubtitle": "التقنيات المكتسبة",
-    "job1": {
-      "title": "مهندس برمجيات متدرب",
-      "loaction": "هيوستن، تكساس، الولايات المتحدة الأمريكية",
-      "date": "٢٠٢٣/٠٦ - ٢٠٢٣/٠٨",
-      "tasks": [
-        "إنشاء والعمل على مشروع الواجهة الأمامية باستخدام Angular",
-        "التعامل مع بيانات ذات معدل تدفق عالي باستخدام RxJS و SignalR",
-        "استخدام Angular Material و AG Grid لإنشاء واجهات مستخدم تفاعلية"
-      ]
-    }
-  },
-  "education": {
-    "title": "التعليم",
-    "cardTitle": "خريج الجامعة رقم 1 عربيًا",
-    "degree": "شهادة البكالوريوس  في هندسة البرمجيات",
-    "university": "جامعة الملك فهد للبترول والمعادن",
-    "graduationDate": "يونيو 2024",
-    "graduationHonors": "خريج مرتبة الشرف الثانية",
-    "CXProgram": [
-      "أتممت ",
-      "برنامج التخصص الدقيق",
-      " في مجال الذكاء الاصطناعي وتعلم الآلة"
-    ],
-    "date": "٢٠٢٠/٠١ - ٢٠٢٤/٠٦",
-    "image": "KFUPM_LOGO_ar.png"
-  },
-  "projects": {
-    "title": "المشاريع",
-    "forMore": "للمزيد يمكنك الإطلاع على صفحتي في GitHub",
-    "visit": "اطّلع",
-    "coomingSoon": "قريبًا",
-    "projectsList": [
-      {
-        "title": "WikiProduct",
-        "description": "نظام مستودع شامل رقمي مدعوم بالذكاء الاصطناعي وأرشيف ويب يُعرض فيه منتجات إنترنت متنوعة مع توصيات تسوق شخصية.",
-        "image": "WikiProduct.png",
-        "link": "https://wikiproduct.up.railway.app/"
-      },
-      {
-        "title": "بليغ",
-        "description": "منصة بليغ تقدم ترجمة إلى العربية الفصيحة بتركيز على الإيجاز والوضوح، بعكس المنصات التي تعتمد على الترجمات الركيكة والمطولة.",
-        "image": "Baleegh.png",
-        "link": "https://baleegh-production.up.railway.app/"
-      },
-      {
-        "title": "Scheduleit",
-        "description": "أداة تساعدك على جدولة موعد مناسب، حيث يمكنك مشاهدة التواريخ التي يكون الزوار مشغولين فيها أو التواريخ التي يكونون فيها متفرغين. وذلك لتسهيل عملية التنسيق بين الأطراف المعنية.",
-        "image": "Scheduleit.png",
-        "link": "https://scheduleit.up.railway.app/ar"
-      }
-    ]
+  "mapbox":{
+    "traffic": "حركة المرور",
+    "frequencyOfIncidences": "عدد الحوادث",
+    "typesOfIncidences":"أنواع الحوادث",
+    "magnitudeOfTraffic":"حجم الحركة",
+    "timesOfIncidences":"أوقات الحوادث",
+    "types":[
+      { "id": 0, "description": "غير معروف" },
+      { "id": 1, "description": "حادث" },
+      { "id": 2, "description": "ضباب" },
+      { "id": 3, "description": "ظروف خطيرة" },
+      { "id": 4, "description": "مطر" },
+      { "id": 5, "description": "جليد" },
+      { "id": 6, "description": "ازدحام" },
+      { "id": 7, "description": "إغلاق حارة" },
+      { "id": 8, "description": "إغلاق طريق" },
+      { "id": 9, "description": "أعمال طرق" },
+      { "id": 10, "description": "رياح" },
+      { "id": 11, "description": "فيضانات" },
+      { "id": 14, "description": "مركبة معطلة" }
+  ]
   },
   "footer": {
-    "title": "صُنِعَ مِن قَبل إلياس المبارك @٢٠٢٤"
+    "title": "لمحة @2024"
   }
 }
