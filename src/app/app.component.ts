@@ -8,6 +8,7 @@ import { Title } from '@angular/platform-browser';
 import { FooterComponent } from './components/footer/footer.component';
 import { CookieService } from 'ngx-cookie-service';
 import { MapboxComponent } from "./components/mapbox/mapbox.component";
+import { StepsComponent } from "./components/steps/steps.component";
 
 @Component({
   selector: 'app-root',
@@ -21,7 +22,8 @@ import { MapboxComponent } from "./components/mapbox/mapbox.component";
     IntroComponent,
     TranslateModule,
     FooterComponent,
-    MapboxComponent
+    MapboxComponent,
+    StepsComponent
 ],
 })
 export class AppComponent {

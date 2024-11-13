@@ -38,6 +38,28 @@
         { "id": 14, "description": "Broken Down Vehicle" }
       ]
     },
+  "steps": {
+    "step_1": {
+      "title": "Search",
+      "description": "Search for properties in your desired neighborhood",
+      "alt": "Search step image"
+    },
+    "step_2": {
+      "title": "Compare",
+      "description": "Compare different properties and their surroundings",
+      "alt": "Compare step image"
+    },
+    "step_3": {
+      "title": "Analyze",
+      "description": "Analyze neighborhood data and statistics",
+      "alt": "Analyze step image"
+    },
+    "step_4": {
+      "title": "Choose",
+      "description": "Make an informed decision about your ideal property",
+      "alt": "Choose step image"
+    }
+  },
   "footer": {
     "title": "Lamha @2024"
   }
