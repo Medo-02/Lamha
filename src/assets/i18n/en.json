@@ -1,6 +1,7 @@
 {
   "settings": {
     "dir": "ltr",
+    "rev_dir": "rtl",
     "titlesFont": "en-fonts",
     "logoFont": "en-logo-font",
     "title": "Lamha",
@@ -12,7 +13,7 @@
   "intro": {
     "title": "Lamha",
     "description": "Platform that help in in choosing the ideal real estate in your neiberhood",
-    "contactInfo": "Contact Us",
+    "contactInfo": "Try Now",
     "moreBtn": "Learn More",
     "joinBtn": "Join Now"
   },
@@ -37,7 +38,7 @@
       { "id": 11, "description": "Flooding" },
       { "id": 14, "description": "Broken Down Vehicle" }
     ],
-    "magnitude_types":[
+    "magnitude_types": [
       { "id": 0, "description": "Unknown" },
       { "id": 1, "description": "Low" },
       { "id": 2, "description": "Medium" },

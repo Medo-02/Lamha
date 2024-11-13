@@ -23,7 +23,7 @@
       alt="{{ 'steps.step_2.alt' | translate }}"
       class="step-image"
     />
-    <div class="step-content" dir="ltr">
+    <div class="step-content" [dir]="'rev_dir' | translate">
       <div class="flex flex-col gap-8">
         <h2 class="text-5xl font-bold">
           {{ "steps.step_2.title" | translate }}

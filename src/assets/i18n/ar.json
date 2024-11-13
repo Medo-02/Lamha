@@ -1,6 +1,7 @@
 {
   "settings": {
     "dir": "rtl",
+    "rev_dir": "ltr",
     "titlesFont": "ar-fonts",
     "logoFont": "ar-logo-font",
     "title": "لمحة",
@@ -12,7 +13,7 @@
   "intro": {
     "title": "لمحة",
     "description": "منصة تساعدك في اختيار العقار المثالي في حيك",
-    "contactInfo": "تواصل معنا",
+    "contactInfo": "جرب الآن",
     "moreBtn": "اعرف المزيد",
     "joinBtn": "انضم الآن"
   },
@@ -43,17 +44,17 @@
       { "id": 10, "description": "رياح" },
       { "id": 11, "description": "فيضان" },
       { "id": 14, "description": "مركبة معطلة" }
-  ],
-"magnitude_types": [
-  { "id": 0, "description": "غير معروف" },
-  { "id": 1, "description": "منخفض" },
-  { "id": 2, "description": "متوسط" },
-  { "id": 3, "description": "عالي" },
-  { "id": 4, "description": "عالي جدًا" }
-],
-  "district": "معلومات الحي",
-  "district_name": "اسم الحي",
-  "price_per_m2": "السعر لكل متر مربع"
+    ],
+    "magnitude_types": [
+      { "id": 0, "description": "غير معروف" },
+      { "id": 1, "description": "منخفض" },
+      { "id": 2, "description": "متوسط" },
+      { "id": 3, "description": "عالي" },
+      { "id": 4, "description": "عالي جدًا" }
+    ],
+    "district": "معلومات الحي",
+    "district_name": "اسم الحي",
+    "price_per_m2": "السعر لكل متر مربع"
   },
   "steps": {
     "step_1": {
