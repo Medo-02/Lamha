@@ -7,44 +7,99 @@
     >
       @if (data){
 
-      <p>{{ "mapbox.genral" | translate }}</p>
-
-      <div class="flex flex-row justify-between w-full">
-        <p>{{ "mapbox.area" | translate }}:</p>
-        <p>{{ data.area }}KM</p>
-      </div>
-      <p>{{ "mapbox.demographics" | translate }}</p>
-
-      <div class="flex flex-row justify-between w-full">
-        <p>{{ "mapbox.female_population" | translate }}:</p>
-        <p>{{ data.demographics.female_population }}</p>
+      <!-- General Section -->
+      <div class="w-full">
+        <h3 class="mb-4">{{ "mapbox.genral" | translate }}</h3>
+        <div class="flex flex-row justify-between w-full">
+          <p>{{ "mapbox.area" | translate }}:</p>
+          <p>{{ (data.area * 1000000).toFixed(2) }} KM</p>
+        </div>
       </div>
 
-      <div class="flex flex-row justify-between w-full">
-        <p>{{ "mapbox.male_population" | translate }}:</p>
-        <p>{{ data.demographics.male_population }}</p>
+      <!-- District Information -->
+      @if (data.district) {
+      <div class="w-full">
+        <h3 class="mb-4">{{ "mapbox.district" | translate }}</h3>
+        <div class="flex flex-col gap-3 w-full">
+          <div class="flex flex-row justify-between">
+            <p>{{ "mapbox.district_name" | translate }}:</p>
+            <p>{{ data.district.district_name }}</p>
+          </div>
+          <div class="flex flex-row justify-between">
+            <p>{{ "mapbox.price_per_m2" | translate }}:</p>
+            <p>{{ data.district.price_per_m2 }} SAR</p>
+          </div>
+        </div>
       </div>
-
-      <div class="flex flex-row justify-between w-full">
-        <p>{{ "mapbox.total_population" | translate }}:</p>
-        <p>{{ data.demographics.total_population }}</p>
-      </div>
-      <p>{{ "mapbox.traffic" | translate }}</p>
-      <div class="flex flex-row justify-between w-full">
-        <p>{{ "mapbox.frequencyOfIncidences" | translate }}:</p>
-        <p>{{ data.incident_data.frequency_of_incidences }}</p>
-      </div>
-      <div class="flex flex-row justify-between w-full">
-        <p>{{ "mapbox.magnitudeOfTraffic" | translate }}:</p>
-        <p>{{ data.incident_data.magnitude_of_traffic }}</p>
-      </div>
-      <div
-        *ngFor="let item of data.incident_data.magnitude_of_traffic | keyvalue"
-      >
-        {{ ("mapbox.types" | translate)[0][0] }}
-      </div>
-
       }
+
+      <!-- Demographics Section -->
+      <div class="w-full">
+        <h3 class="mb-4">{{ "mapbox.demographics" | translate }}</h3>
+        <div class="flex flex-col gap-3 w-full">
+          <div class="flex flex-row justify-between">
+            <p>{{ "mapbox.female_population" | translate }}:</p>
+            <p>{{ data.demographics.female_population }}</p>
+          </div>
+          <div class="flex flex-row justify-between">
+            <p>{{ "mapbox.male_population" | translate }}:</p>
+            <p>{{ data.demographics.male_population }}</p>
+          </div>
+          <div class="flex flex-row justify-between font-bold">
+            <p>{{ "mapbox.total_population" | translate }}:</p>
+            <p>{{ data.demographics.total_population }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Traffic Section -->
+      @if (data.incident_data) {
+      <div class="w-full">
+        <h3 class="mb-4">{{ "mapbox.traffic" | translate }}</h3>
+        <div class="flex flex-col gap-3 w-full">
+          <div class="flex flex-row justify-between">
+            <p>{{ "mapbox.frequencyOfIncidences" | translate }}:</p>
+            <p>{{ data.incident_data.frequency_of_incidences }}</p>
+          </div>
+
+          <!-- Traffic Magnitude -->
+          @if (data.incident_data.magnitude_of_traffic) {
+          <div class="w-full">
+            <p class="mb-2">{{ "mapbox.magnitudeOfTraffic" | translate }}:</p>
+            <div class="grid grid-cols-1 gap-2">
+              @for (item of
+              getTrafficMagnitudeEntries(data.incident_data.magnitude_of_traffic);
+              track item[0]) {
+              <div
+                class="flex justify-between items-center p-2 bg-surface-200 rounded"
+              >
+                <span>{{ item[0] }}</span>
+                <span class="font-bold">{{ item[1] }}</span>
+              </div>
+              }
+            </div>
+          </div>
+          }
+
+          <!-- Incident Times -->
+          @if (data.incident_data.times_of_incidences?.length > 0) {
+          <div class="w-full">
+            <p class="mb-2">{{ "mapbox.timesOfIncidences" | translate }}:</p>
+            <div class="grid grid-cols-1 gap-2">
+              @for (time of data.incident_data.times_of_incidences; track
+              $index) {
+              <div
+                class="flex justify-between items-center p-2 bg-surface-200 rounded"
+              >
+                <span>{{ time }}</span>
+              </div>
+              }
+            </div>
+          </div>
+          }
+        </div>
+      </div>
+      } }
     </div>
 
     <div id="map" class="rounded-lg col-span-2" style="height: 35rem"></div>

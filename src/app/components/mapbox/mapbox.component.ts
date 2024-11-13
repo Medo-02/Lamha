@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 import mapboxgl from 'mapbox-gl';
 import MapboxDraw from '@mapbox/mapbox-gl-draw';
@@ -21,6 +21,9 @@ import { StatisticsService } from '../../services/statistics.service';
   styleUrl: './mapbox.component.scss',
 })
 export class MapboxComponent implements OnInit {
+  parseInt(arg0: any) {
+    throw new Error('Method not implemented.');
+  }
   map!: mapboxgl.Map;
   draw!: MapboxDraw;
   mapBoxStyle!: string;
@@ -36,7 +39,8 @@ export class MapboxComponent implements OnInit {
 
   constructor(
     protected themeControl: ThemeControlService,
-    private statisticsService: StatisticsService
+    private statisticsService: StatisticsService,
+    private translateService: TranslateService
   ) {}
 
   ngOnInit() {
@@ -125,5 +129,16 @@ export class MapboxComponent implements OnInit {
       });
       console.log('Polygon Coordinates:', this.temp.coordinates[0]);
     }
+  }
+  getTrafficMagnitudeEntries(magnitude: any): [string, number][] {
+    if (!magnitude || typeof magnitude !== 'object') {
+      return [];
+    }
+    return Object.entries(magnitude).map(([key, value]) => {
+      return [
+        this.translateService.instant(`mapbox.types.${key}.description`),
+        value as number,
+      ];
+    });
   }
 }

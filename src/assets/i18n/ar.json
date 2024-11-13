@@ -43,7 +43,10 @@
       { "id": 10, "description": "رياح" },
       { "id": 11, "description": "فيضانات" },
       { "id": 14, "description": "مركبة معطلة" }
-  ]
+  ],
+  "district": "معلومات الحي",
+  "district_name": "اسم الحي",
+  "price_per_m2": "السعر لكل متر مربع"
   },
   "steps": {
     "step_1": {
