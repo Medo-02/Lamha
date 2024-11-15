@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
+import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
 import mapboxgl from 'mapbox-gl';
 import MapboxDraw from '@mapbox/mapbox-gl-draw';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
@@ -16,7 +17,7 @@ import { StatisticsService } from '../../services/statistics.service';
 @Component({
   selector: 'app-mapbox',
   standalone: true,
-  imports: [TranslateModule, CommonModule],
+  imports: [TranslateModule, CommonModule, NgxSpinnerModule],
   templateUrl: './mapbox.component.html',
   styleUrl: './mapbox.component.scss',
 })
@@ -40,7 +41,8 @@ export class MapboxComponent implements OnInit {
   constructor(
     protected themeControl: ThemeControlService,
     private statisticsService: StatisticsService,
-    private translateService: TranslateService
+    private translateService: TranslateService,
+    private spinner: NgxSpinnerService
   ) {}
 
   ngOnInit() {
@@ -116,10 +118,12 @@ export class MapboxComponent implements OnInit {
 
     // Find the coordinates of the last drawn polygon
     if (data.features.length) {
+      this.spinner.show();
       const coordinates = data.features[0].geometry;
       this.temp = coordinates;
       this.statisticsService.getStatistics(this.temp.coordinates[0]).subscribe({
         next: (response) => {
+          this.spinner.hide();
           this.data = response;
           console.log('Statistics:', response);
         },
