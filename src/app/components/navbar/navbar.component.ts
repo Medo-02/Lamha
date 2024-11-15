@@ -38,7 +38,9 @@ export class NavbarComponent {
 
   ngOnInit() {
     const darkThemeCookie = this.cookieService.get('darkTheme');
-    this.themeControl.isDarkTheme = darkThemeCookie === 'true';
+    if (darkThemeCookie !== '') {
+      this.themeControl.isDarkTheme = darkThemeCookie === 'true';
+    }
     this.applyTheme();
   }
 
