@@ -4,52 +4,6 @@
   border-radius: 76% 24% 65% 35% / 67% 23% 75% 33%;
   border: 1px solid #ffffff;
 }
-@media (min-width: 1024px) {
-  .hero-img {
-    width: 30rem;
-    height: 13rem;
-  }
-}
-.blobs {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  left: 0;
-  top: 0;
-  z-index: -1000;
-  overflow: hidden;
-}
-.blobs-glass {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  left: 0;
-  top: 0;
-  z-index: 1;
-  -webkit-backdrop-filter: blur(120px);
-  backdrop-filter: blur(120px);
-}
-.blob {
-  position: absolute;
-  width: 20%;
-  aspect-ratio: 1;
-  top: 0;
-  left: 0;
-  border-radius: 50%;
-  opacity: 0.6;
-}
-
-.blob-secondry {
-  z-index: -100;
-  background-color: var(--secondary-color);
-}
-.blob-primary {
-  z-index: -101;
-  background-color: var(--primary-color);
-}
-.blob-bg {
-  background-color: var(--surface-a);
-}
 .welcome-section-container {
   position: relative;
   height: 75dvh;
@@ -60,12 +14,6 @@
   font-family: "Alkalami", serif;
   font-weight: 400;
   font-style: normal;
-}
-
-@media (max-width: 1024px) {
-  .blob {
-    width: 60%;
-  }
 }
 
 @keyframes flickerAnimation {

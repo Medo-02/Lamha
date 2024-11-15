@@ -1,25 +1,27 @@
 <div
   class="flex flex-col items-center justify-center align-content-center gap-8"
 >
-  <div class="w-5/6 md:w-11/12 rounded-lg card p-5 gap-5 grid grid-cols-3">
+  <div
+    class="w-5/6 md:w-11/12 rounded-lg card p-5 gap-5 flex flex-col-reverse lg:grid lg:grid-cols-3"
+  >
     <div
-      class="flex flex-col overflow-auto info-card items-center gap-4 text-xl font-bold"
+      class="flex flex-col overflow-auto info-card items-center gap-4 text-xl"
     >
       @if (data){
 
       <!-- General Section -->
       <div class="w-full">
-        <h3 class="mb-4">{{ "mapbox.genral" | translate }}</h3>
+        <h3 class="font-bold mb-4">{{ "mapbox.genral" | translate }}</h3>
         <div class="flex flex-row justify-between w-full">
           <p>{{ "mapbox.area" | translate }}:</p>
-          <p>{{ data.area.toFixed(2) }} KM^2</p>
+          <p>{{ data.area.toFixed(2) }} KM²</p>
         </div>
       </div>
 
       <!-- District Information -->
       @if (data.district) {
       <div class="w-full">
-        <h3 class="mb-4">{{ "mapbox.district" | translate }}</h3>
+        <h3 class="font-bold mb-4">{{ "mapbox.district" | translate }}</h3>
         <div class="flex flex-col gap-3 w-full">
           <div class="flex flex-row justify-between">
             <p>{{ "mapbox.district_name" | translate }}:</p>
@@ -35,7 +37,7 @@
 
       <!-- Demographics Section -->
       <div class="w-full">
-        <h3 class="mb-4">{{ "mapbox.demographics" | translate }}</h3>
+        <h3 class="font-bold mb-4">{{ "mapbox.demographics" | translate }}</h3>
         <div class="flex flex-col gap-3 w-full">
           <div class="flex flex-row justify-between">
             <p>{{ "mapbox.female_population" | translate }}:</p>
@@ -55,7 +57,7 @@
       <!-- Traffic Section -->
       @if (data.incident_data) {
       <div class="w-full">
-        <h3 class="mb-4">{{ "mapbox.traffic" | translate }}</h3>
+        <h3 class="font-bold mb-4">{{ "mapbox.traffic" | translate }}</h3>
         <div class="flex flex-col gap-3 w-full">
           <div class="flex flex-row justify-between">
             <p>{{ "mapbox.frequencyOfIncidences" | translate }}:</p>
@@ -82,7 +84,9 @@
           <!-- Traffic Magnitude -->
           @if (data.incident_data.magnitude_of_traffic) {
           <div class="w-full">
-            <p class="mb-2">{{ "mapbox.magnitudeOfTraffic" | translate }}:</p>
+            <p class="font-bold mb-4">
+              {{ "mapbox.magnitudeOfTraffic" | translate }}:
+            </p>
             <div class="grid grid-cols-1 gap-2">
               @for (item of
               getTrafficMagnitudeEntries(data.incident_data.magnitude_of_traffic);
@@ -101,7 +105,9 @@
           <!-- Incident Times -->
           @if (data.incident_data.times_of_incidences?.length > 0) {
           <div class="w-full">
-            <p class="mb-2">{{ "mapbox.timesOfIncidences" | translate }}:</p>
+            <p class="font-bold mb-4">
+              {{ "mapbox.timesOfIncidences" | translate }}:
+            </p>
             <div class="grid grid-cols-1 gap-2">
               @for (time of data.incident_data.times_of_incidences; track
               $index) {
@@ -116,9 +122,14 @@
           }
         </div>
       </div>
-      } }
+      } } @else{
+      <div class="flex flex-col gap-3 items-center h-full justify-center">
+        <h3 class="text-center">{{ "mapbox.select_message" | translate }}</h3>
+        <img src="assets/images/tutorial.gif" class="w-3/6 rounded-lg" />
+      </div>
+      }
     </div>
 
-    <div id="map" class="rounded-lg col-span-2" style="height: 35rem"></div>
+    <div id="map" class="rounded-lg col-span-2"></div>
   </div>
 </div>
