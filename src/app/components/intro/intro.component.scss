@@ -52,7 +52,7 @@
 }
 .welcome-section-container {
   position: relative;
-  height: 70dvh;
+  height: 75dvh;
   z-index: 1000;
 }
 .font-title {
@@ -119,8 +119,8 @@
   animation: flickerAnimation 3s infinite;
 }
 .glow-on-hover-outlined {
-  width: 220px;
-  height: 50px;
+  width: 25vh;
+  height: 6vh;
   border: 2px solid var(--btn-outlined-color);
   outline: none;
   color: var(--btn-outlined-color);
@@ -131,8 +131,8 @@
   border-radius: 10px;
 }
 .glow-on-hover {
-  width: 220px;
-  height: 50px;
+  width: 25vh;
+  height: 6vh;
   border: none;
   outline: none;
   color: #fff;
