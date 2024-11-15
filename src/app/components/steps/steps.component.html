@@ -6,7 +6,7 @@
       alt="{{ 'steps.step_1.alt' | translate }}"
       class="step-image"
     />
-    <div class="step-content">
+    <div class="step-content text-center lg:text-start">
       <div class="flex flex-col gap-8">
         <h2 class="text-5xl font-bold">
           {{ "steps.step_1.title" | translate }}
@@ -23,7 +23,10 @@
       alt="{{ 'steps.step_2.alt' | translate }}"
       class="step-image"
     />
-    <div class="step-content" [dir]="'rev_dir' | translate">
+    <div
+      class="step-content text-center lg:text-start"
+      [dir]="'settings.rev_dir' | translate"
+    >
       <div class="flex flex-col gap-8">
         <h2 class="text-5xl font-bold">
           {{ "steps.step_2.title" | translate }}
@@ -40,7 +43,7 @@
       alt="{{ 'steps.step_3.alt' | translate }}"
       class="step-image"
     />
-    <div class="step-content">
+    <div class="step-content text-center lg:text-start">
       <div class="flex flex-col gap-8">
         <h2 class="text-5xl font-bold">
           {{ "steps.step_3.title" | translate }}

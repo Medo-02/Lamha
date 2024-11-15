@@ -3,25 +3,17 @@ import { Blob } from '../../models/blob.model';
 import { TranslateModule } from '@ngx-translate/core';
 import { gsap } from 'gsap';
 import { StepsComponent } from '../steps/steps.component';
-import { ProjectsComponent } from '../projects/projects.component';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-intro',
   standalone: true,
-  imports: [TranslateModule, StepsComponent, ProjectsComponent],
+  imports: [TranslateModule, StepsComponent, RouterModule],
   templateUrl: './intro.component.html',
   styleUrl: './intro.component.scss',
 })
 export class IntroComponent implements OnInit {
   constructor(private router: Router) {}
-
-  scrollToProjects() {
-    const projectsSection = document.querySelector('#projectsContainer');
-    if (projectsSection) {
-      projectsSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
 
   scrollToSteps() {
     const stepsSection = document.querySelector('#stepsContainer');

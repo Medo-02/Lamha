@@ -9,22 +9,13 @@
       #introContainer
       id="introContainer"
     >
-      <h1
-        class="font-bold text-8xl font-title ar-logo-font"
-
-      >
-        لمحة
-      </h1>
+      <h1 class="font-bold text-8xl font-title ar-logo-font">لمحة</h1>
       <p class="text-l">
         {{ "intro.description" | translate }}
       </p>
       <h2 class="font-semibold">{{ "intro.contactInfo" | translate }}</h2>
       <div class="flex flex-row gap-3 items-center">
-        <button
-          class="glow-on-hover"
-          type="button"
-          (click)="scrollToProjects()"
-        >
+        <button class="glow-on-hover" type="button" [routerLink]="['/map']">
           {{ "intro.joinBtn" | translate }}
         </button>
         <button
@@ -43,4 +34,3 @@
   ></i> -->
 </div>
 <app-steps></app-steps>
-<app-projects></app-projects>
