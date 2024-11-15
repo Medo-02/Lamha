@@ -1,27 +1,21 @@
-# ElyasAlmubarak
+# Lamha
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.9.
+![Lamha Preview](https://res.cloudinary.com/dd55xpl6b/image/upload/v1731710702/Screenshot_2024-11-16_013816_hwquux.png)
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+**Lamha** is a tool designed to bridge the gap between desk research and real-world conditions, enabling better investment decisions. By combining geographic data, demographics, and traffic insights, Lamha empowers users to make data-driven evaluations of market opportunities.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Key Features
+- **Market Research Analysis**: Aligns desk research with real-time data for comprehensive market evaluation.
+- **Demographic Insights**: Understand the population distribution, including gender-specific data.
+- **Traffic Monitoring**: Gain insights into current traffic incidences and their impact on selected areas.
+- **Interactive Map Integration**: Use an intuitive map interface for selecting areas and accessing localized data.
 
-## Build
+## Benefits
+- Make informed investment decisions with reliable data.
+- Evaluate potential opportunities by considering demographics and traffic conditions.
+- Optimize market strategies with insights tailored to specific regions.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
