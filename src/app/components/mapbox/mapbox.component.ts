@@ -13,6 +13,7 @@ import '@mapbox-controls/zoom/src/index.css';
 import { CommonModule } from '@angular/common';
 import { ThemeControlService } from '../../services/theme-control.service';
 import { StatisticsService } from '../../services/statistics.service';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-mapbox',
@@ -50,8 +51,7 @@ export class MapboxComponent implements OnInit {
       ? 'mapbox://styles/mapbox/traffic-night-v2'
       : 'mapbox://styles/mapbox/light-v10';
     // Set access token
-    mapboxgl.accessToken =
-      'REMOVED';
+    mapboxgl.accessToken =environment.mapboxToken;
 
     // Set RTL text plugin
     mapboxgl.setRTLTextPlugin(
