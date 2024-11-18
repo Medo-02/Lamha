@@ -38,3 +38,8 @@
     max-width: 100%;
   }
 }
+
+:host {
+  display: block;
+  overflow-x: hidden;
+}
